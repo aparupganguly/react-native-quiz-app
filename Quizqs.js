@@ -23,14 +23,14 @@ const data = [
 
   {
     question:
-      'The Parliament of India cannot be regarded as a sovereign body because?',
+      'What is 2+3?',
     options: [
-      'it can legislate only on subjects entrusted to the Centre by the Constitution',
-      ' it has to operate within the limits prescribed by the Constitution',
-      'the Supreme Court can declare laws passed by parliament as unconstitutional if they contravene the provisions of the Constitution',
-      'All of the above',
+      '5',
+      '6',
+      '0',
+      '7',
     ],
-    correct_option: 'All of the above',
+    correct_option: '5',
   },
 ];
 
