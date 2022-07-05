@@ -14,11 +14,11 @@ const data = [
     question: 'Who is known as the Iron Man of India?',
     options: [
       'Dr B. R. Ambedkar',
-      ' Sardar Vallabhbhai Patel',
+      'Sardar Vallabhbhai Patel',
       'Rabindranath Tagore',
       'Bankim Chandra Chatterjee',
     ],
-    correct_option: 'Random Access Memory',
+    correct_option: 'Sardar Vallabhbhai Patel',
   },
 
   {
@@ -30,7 +30,7 @@ const data = [
       'the Supreme Court can declare laws passed by parliament as unconstitutional if they contravene the provisions of the Constitution',
       'All of the above',
     ],
-    correct_option: 'Random Access Memory',
+    correct_option: 'All of the above',
   },
 ];
 

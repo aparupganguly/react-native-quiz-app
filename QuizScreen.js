@@ -16,10 +16,23 @@ const QuizScreen = () => {
   const renderQuestion = () => {
     return (
       <View>
-        <Text>
+        <Text
+          style={{
+            fontSize:35,
+            textAlign: 'center',
+            color: '#062C30',
+          }}>
           {qstn + 1}/{allqns.length}{' '}
         </Text>
-        <Text>{allqns[qstn]?.question}</Text>
+        <Text
+          style={{
+            fontSize: 30,
+            textAlign: 'center',
+
+            color: '#062C30',
+          }}>
+          {allqns[qstn]?.question}
+        </Text>
       </View>
     );
   };
@@ -38,7 +51,11 @@ const QuizScreen = () => {
   };
   const handleNext = () => {
     if (qstn == allqns.length - 1) {
-      setshowScoreModal(true);
+    return(
+        <View>
+            <Text>Your score is {score}/ {qstn.length}</Text>
+        </View>
+    )
     } else {
       setQstn(qstn + 1);
       setcorrectOptionSelected(null);
@@ -52,10 +69,25 @@ const QuizScreen = () => {
       <View>
         {allqns[qstn]?.options.map(option => (
           <TouchableOpacity
+            style={{
+              backgroundColor: '#3A5BA0',
+              height: '11%',
+              margin: 20,
+              borderRadius: 10,
+            }}
             onPress={() => validateAnswer(option)}
             disabled={isDisabled}
             key={option}>
-            <Text>{option}</Text>
+            <Text
+              style={{
+                fontSize: 20,
+                color: '#062C30',
+                textAlign: 'center',
+                color: 'white',
+                padding: 10,
+              }}>
+              {option}
+            </Text>
             {option == correctOption ? (
               <View>
                 <MaterialCommunityIcons
@@ -63,8 +95,7 @@ const QuizScreen = () => {
                   style={{
                     color: 'green',
                     fontSize: 30,
-                  }
-                }
+                  }}
                 />
               </View>
             ) : option == correctOptionSelected ? (
@@ -87,8 +118,26 @@ const QuizScreen = () => {
   const renderNextButton = () => {
     if (showNextButton) {
       return (
-        <TouchableOpacity onPress={handleNext}>
-          <Text>Next</Text>
+        <TouchableOpacity
+            
+          style={{
+            height:'8%',
+            borderRadius:10,
+            marginRight:15,
+            marginBottom:15,
+            marginLeft:15,
+            backgroundColor: '#1F4690',
+          }}
+          onPress={handleNext}>
+          <Text
+            style={{
+              fontSize: 20,
+              textAlign: 'center',
+              color: 'white',
+              padding:'3%',
+            }}>
+            Next
+          </Text>
         </TouchableOpacity>
       );
     } else {
@@ -101,7 +150,6 @@ const QuizScreen = () => {
       {renderQuestion()}
       {renderOptions()}
       {renderNextButton()}
-     
     </SafeAreaView>
   );
 };
